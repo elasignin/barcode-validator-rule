@@ -6,12 +6,33 @@ package com.ingramcontent.consolidated.labels.model;
 
 public class OrderStatus implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public OrderStatus() {
-    }
+	private java.lang.Boolean status;
+	private java.lang.String messageCode;
 
+	public OrderStatus() {
+	}
 
+	public java.lang.Boolean getStatus() {
+		return this.status;
+	}
 
+	public void setStatus(java.lang.Boolean status) {
+		this.status = status;
+	}
+
+	public java.lang.String getMessageCode() {
+		return this.messageCode;
+	}
+
+	public void setMessageCode(java.lang.String messageCode) {
+		this.messageCode = messageCode;
+	}
+
+	public OrderStatus(java.lang.Boolean status, java.lang.String messageCode) {
+		this.status = status;
+		this.messageCode = messageCode;
+	}
 
 }
