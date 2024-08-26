@@ -12,6 +12,8 @@ public class BarcodeDetail implements java.io.Serializable {
 	private com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation;
 	private java.lang.Integer totalCount;
 
+	private com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus;
+
 	public BarcodeDetail() {
 	}
 
@@ -41,13 +43,24 @@ public class BarcodeDetail implements java.io.Serializable {
 		this.totalCount = totalCount;
 	}
 
+	public com.ingramcontent.consolidated.labels.model.OrderStatus getOrderStatus() {
+		return this.orderStatus;
+	}
+
+	public void setOrderStatus(
+			com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
 	public BarcodeDetail(
 			com.ingramcontent.consolidated.labels.model.BarcodeValidator validator,
 			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation,
-			java.lang.Integer totalCount) {
+			java.lang.Integer totalCount,
+			com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus) {
 		this.validator = validator;
 		this.orderInformation = orderInformation;
 		this.totalCount = totalCount;
+		this.orderStatus = orderStatus;
 	}
 
 }
