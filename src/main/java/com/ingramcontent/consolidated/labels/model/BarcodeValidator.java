@@ -6,12 +6,44 @@ package com.ingramcontent.consolidated.labels.model;
 
 public class BarcodeValidator implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public BarcodeValidator() {
-    }
+	private java.lang.String barcodeShip;
+	private java.lang.String barcode;
+	private java.lang.String toteBarcode;
 
+	public BarcodeValidator() {
+	}
 
+	public java.lang.String getBarcodeShip() {
+		return this.barcodeShip;
+	}
 
+	public void setBarcodeShip(java.lang.String barcodeShip) {
+		this.barcodeShip = barcodeShip;
+	}
+
+	public java.lang.String getBarcode() {
+		return this.barcode;
+	}
+
+	public void setBarcode(java.lang.String barcode) {
+		this.barcode = barcode;
+	}
+
+	public java.lang.String getToteBarcode() {
+		return this.toteBarcode;
+	}
+
+	public void setToteBarcode(java.lang.String toteBarcode) {
+		this.toteBarcode = toteBarcode;
+	}
+
+	public BarcodeValidator(java.lang.String barcodeShip,
+			java.lang.String barcode, java.lang.String toteBarcode) {
+		this.barcodeShip = barcodeShip;
+		this.barcode = barcode;
+		this.toteBarcode = toteBarcode;
+	}
 
 }
