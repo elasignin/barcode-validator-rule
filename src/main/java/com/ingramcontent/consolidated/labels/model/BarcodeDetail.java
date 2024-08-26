@@ -6,12 +6,48 @@ package com.ingramcontent.consolidated.labels.model;
 
 public class BarcodeDetail implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public BarcodeDetail() {
-    }
+	private com.ingramcontent.consolidated.labels.model.BarcodeValidator validator;
+	private com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation;
+	private java.lang.Integer totalCount;
 
+	public BarcodeDetail() {
+	}
 
+	public com.ingramcontent.consolidated.labels.model.BarcodeValidator getValidator() {
+		return this.validator;
+	}
 
+	public void setValidator(
+			com.ingramcontent.consolidated.labels.model.BarcodeValidator validator) {
+		this.validator = validator;
+	}
+
+	public com.ingramcontent.consolidated.labels.model.OrderInformation getOrderInformation() {
+		return this.orderInformation;
+	}
+
+	public void setOrderInformation(
+			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation) {
+		this.orderInformation = orderInformation;
+	}
+
+	public java.lang.Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(java.lang.Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public BarcodeDetail(
+			com.ingramcontent.consolidated.labels.model.BarcodeValidator validator,
+			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation,
+			java.lang.Integer totalCount) {
+		this.validator = validator;
+		this.orderInformation = orderInformation;
+		this.totalCount = totalCount;
+	}
 
 }
