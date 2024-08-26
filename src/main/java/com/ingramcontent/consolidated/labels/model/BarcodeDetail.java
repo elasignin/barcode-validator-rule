@@ -9,7 +9,7 @@ public class BarcodeDetail implements java.io.Serializable {
 	static final long serialVersionUID = 1L;
 
 	private com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation;
-	private java.lang.Integer totalCount;
+	private int totalCount;
 
 	private com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus;
 
@@ -25,14 +25,6 @@ public class BarcodeDetail implements java.io.Serializable {
 	public void setOrderInformation(
 			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation) {
 		this.orderInformation = orderInformation;
-	}
-
-	public java.lang.Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(java.lang.Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public com.ingramcontent.consolidated.labels.model.OrderStatus getOrderStatus() {
@@ -53,9 +45,17 @@ public class BarcodeDetail implements java.io.Serializable {
 		this.barcodeValidator = barcodeValidator;
 	}
 
+	public int getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public BarcodeDetail(
 			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation,
-			java.lang.Integer totalCount,
+			int totalCount,
 			com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus,
 			com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator) {
 		this.orderInformation = orderInformation;
