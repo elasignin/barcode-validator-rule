@@ -6,12 +6,25 @@ package com.ingramcontent.consolidated.labels.model;
 
 public class OrderInformation implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public OrderInformation() {
-    }
+	private com.ingramcontent.consolidated.labels.model.BarcodeRules barcodeRules;
 
+	public OrderInformation() {
+	}
 
+	public com.ingramcontent.consolidated.labels.model.BarcodeRules getBarcodeRules() {
+		return this.barcodeRules;
+	}
 
+	public void setBarcodeRules(
+			com.ingramcontent.consolidated.labels.model.BarcodeRules barcodeRules) {
+		this.barcodeRules = barcodeRules;
+	}
+
+	public OrderInformation(
+			com.ingramcontent.consolidated.labels.model.BarcodeRules barcodeRules) {
+		this.barcodeRules = barcodeRules;
+	}
 
 }
