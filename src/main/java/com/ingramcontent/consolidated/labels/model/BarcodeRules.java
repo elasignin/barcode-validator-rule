@@ -10,17 +10,9 @@ public class BarcodeRules implements java.io.Serializable {
 
 	private boolean usesCustomerSuppliedBarcode;
 	private boolean usesBookmarcSuppliedBarcode;
-	private java.lang.String length;
+	private int length;
 
 	public BarcodeRules() {
-	}
-
-	public java.lang.String getLength() {
-		return this.length;
-	}
-
-	public void setLength(java.lang.String length) {
-		this.length = length;
 	}
 
 	public boolean isUsesCustomerSuppliedBarcode() {
@@ -41,8 +33,16 @@ public class BarcodeRules implements java.io.Serializable {
 		this.usesBookmarcSuppliedBarcode = usesBookmarcSuppliedBarcode;
 	}
 
+	public int getLength() {
+		return this.length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+
 	public BarcodeRules(boolean usesCustomerSuppliedBarcode,
-			boolean usesBookmarcSuppliedBarcode, java.lang.String length) {
+			boolean usesBookmarcSuppliedBarcode, int length) {
 		this.usesCustomerSuppliedBarcode = usesCustomerSuppliedBarcode;
 		this.usesBookmarcSuppliedBarcode = usesBookmarcSuppliedBarcode;
 		this.length = length;
