@@ -8,22 +8,14 @@ public class BarcodeDetail implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	private com.ingramcontent.consolidated.labels.model.BarcodeValidator validator;
 	private com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation;
 	private java.lang.Integer totalCount;
 
 	private com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus;
 
+	private com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator;
+
 	public BarcodeDetail() {
-	}
-
-	public com.ingramcontent.consolidated.labels.model.BarcodeValidator getValidator() {
-		return this.validator;
-	}
-
-	public void setValidator(
-			com.ingramcontent.consolidated.labels.model.BarcodeValidator validator) {
-		this.validator = validator;
 	}
 
 	public com.ingramcontent.consolidated.labels.model.OrderInformation getOrderInformation() {
@@ -52,15 +44,24 @@ public class BarcodeDetail implements java.io.Serializable {
 		this.orderStatus = orderStatus;
 	}
 
+	public com.ingramcontent.consolidated.labels.model.BarcodeValidator getBarcodeValidator() {
+		return this.barcodeValidator;
+	}
+
+	public void setBarcodeValidator(
+			com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator) {
+		this.barcodeValidator = barcodeValidator;
+	}
+
 	public BarcodeDetail(
-			com.ingramcontent.consolidated.labels.model.BarcodeValidator validator,
 			com.ingramcontent.consolidated.labels.model.OrderInformation orderInformation,
 			java.lang.Integer totalCount,
-			com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus) {
-		this.validator = validator;
+			com.ingramcontent.consolidated.labels.model.OrderStatus orderStatus,
+			com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator) {
 		this.orderInformation = orderInformation;
 		this.totalCount = totalCount;
 		this.orderStatus = orderStatus;
+		this.barcodeValidator = barcodeValidator;
 	}
 
 }
