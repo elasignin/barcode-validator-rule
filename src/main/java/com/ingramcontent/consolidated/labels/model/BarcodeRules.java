@@ -8,29 +8,11 @@ public class BarcodeRules implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.String usesCustomerSuppliedBarcode;
-	private java.lang.String usesBookmarcSuppliedBarcode;
+	private boolean usesCustomerSuppliedBarcode;
+	private boolean usesBookmarcSuppliedBarcode;
 	private java.lang.String length;
 
 	public BarcodeRules() {
-	}
-
-	public java.lang.String getUsesCustomerSuppliedBarcode() {
-		return this.usesCustomerSuppliedBarcode;
-	}
-
-	public void setUsesCustomerSuppliedBarcode(
-			java.lang.String usesCustomerSuppliedBarcode) {
-		this.usesCustomerSuppliedBarcode = usesCustomerSuppliedBarcode;
-	}
-
-	public java.lang.String getUsesBookmarcSuppliedBarcode() {
-		return this.usesBookmarcSuppliedBarcode;
-	}
-
-	public void setUsesBookmarcSuppliedBarcode(
-			java.lang.String usesBookmarcSuppliedBarcode) {
-		this.usesBookmarcSuppliedBarcode = usesBookmarcSuppliedBarcode;
 	}
 
 	public java.lang.String getLength() {
@@ -41,9 +23,26 @@ public class BarcodeRules implements java.io.Serializable {
 		this.length = length;
 	}
 
-	public BarcodeRules(java.lang.String usesCustomerSuppliedBarcode,
-			java.lang.String usesBookmarcSuppliedBarcode,
-			java.lang.String length) {
+	public boolean isUsesCustomerSuppliedBarcode() {
+		return this.usesCustomerSuppliedBarcode;
+	}
+
+	public void setUsesCustomerSuppliedBarcode(
+			boolean usesCustomerSuppliedBarcode) {
+		this.usesCustomerSuppliedBarcode = usesCustomerSuppliedBarcode;
+	}
+
+	public boolean isUsesBookmarcSuppliedBarcode() {
+		return this.usesBookmarcSuppliedBarcode;
+	}
+
+	public void setUsesBookmarcSuppliedBarcode(
+			boolean usesBookmarcSuppliedBarcode) {
+		this.usesBookmarcSuppliedBarcode = usesBookmarcSuppliedBarcode;
+	}
+
+	public BarcodeRules(boolean usesCustomerSuppliedBarcode,
+			boolean usesBookmarcSuppliedBarcode, java.lang.String length) {
 		this.usesCustomerSuppliedBarcode = usesCustomerSuppliedBarcode;
 		this.usesBookmarcSuppliedBarcode = usesBookmarcSuppliedBarcode;
 		this.length = length;
