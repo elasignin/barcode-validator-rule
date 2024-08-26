@@ -8,18 +8,10 @@ public class OrderStatus implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	private java.lang.Boolean status;
+	private boolean status;
 	private java.lang.String messageCode;
 
 	public OrderStatus() {
-	}
-
-	public java.lang.Boolean getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(java.lang.Boolean status) {
-		this.status = status;
 	}
 
 	public java.lang.String getMessageCode() {
@@ -30,7 +22,15 @@ public class OrderStatus implements java.io.Serializable {
 		this.messageCode = messageCode;
 	}
 
-	public OrderStatus(java.lang.Boolean status, java.lang.String messageCode) {
+	public boolean isStatus() {
+		return this.status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public OrderStatus(boolean status, java.lang.String messageCode) {
 		this.status = status;
 		this.messageCode = messageCode;
 	}
