@@ -1,8 +1,11 @@
 package com.ingramcontent.consolidated.labels;
 
+import com.ingramcontent.consolidated.labels.model.BarcodeDetail;
+import com.ingramcontent.consolidated.labels.model.OrderStatus;
+
 rule "update BulkItemFeedRule"
 	when 
-		bulkItemUpload: BulkItemUploadRules();
+		barcodeDetail: BarcodeDetail();
 	then
 		
 		InventoryRule inventoryRule = bulkItemUpload.getInventoryRule();
