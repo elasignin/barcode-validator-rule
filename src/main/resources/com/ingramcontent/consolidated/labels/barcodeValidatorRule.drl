@@ -8,13 +8,7 @@ rule "update BulkItemFeedRule"
 		barcodeDetail: BarcodeDetail();
 	then
 		
-		InventoryRule inventoryRule = bulkItemUpload.getInventoryRule();
-		inventoryRule.setMinSizeToProcess(10);
+		OrderStatus status = new OrderStatus();
 		
-		MPItemMatchRule mpItemMatchRule = bulkItemUpload.getMpItemMatchRule();
-		mpItemMatchRule.setMinSizeToProcess(10);
-		
-		PriceRule priceRule = bulkItemUpload.getPriceRule();
-		priceRule.setMinSizeToProcess(10);
 		
 	end
