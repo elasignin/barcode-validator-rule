@@ -1,2 +1,17 @@
 package com.ingramcontent.consolidated.labels;
 
+rule "update BulkItemFeedRule"
+	when 
+		bulkItemUpload: BulkItemUploadRules();
+	then
+		
+		InventoryRule inventoryRule = bulkItemUpload.getInventoryRule();
+		inventoryRule.setMinSizeToProcess(10);
+		
+		MPItemMatchRule mpItemMatchRule = bulkItemUpload.getMpItemMatchRule();
+		mpItemMatchRule.setMinSizeToProcess(10);
+		
+		PriceRule priceRule = bulkItemUpload.getPriceRule();
+		priceRule.setMinSizeToProcess(10);
+		
+	end
