@@ -7,10 +7,8 @@ rule "update BulkItemFeedRule"
 	when 
 		barcodeDetail: BarcodeDetail();
 	then
-		
 		OrderStatus status = new OrderStatus();
 		status.setStatus(false);
 		status.setMessageCode("100");
 		barcodeDetail.setOrderStatus(status);
-		
 	end
