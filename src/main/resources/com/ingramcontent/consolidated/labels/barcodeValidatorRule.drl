@@ -3,39 +3,13 @@ package com.ingramcontent.consolidated.labels;
 import com.ingramcontent.consolidated.labels.model.BarcodeDetail;
 import com.ingramcontent.consolidated.labels.model.OrderStatus;
 
-rule "If Barcode is equal to '9999'"
+rule "update BulkItemFeedRule"
 	when 
-		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
-		barcodeValidator.getBarcode() == "9999")
+		barcodeDetail: BarcodeDetail(barcodeValidator != null 
+		 && barcodeValidator.getBarcode() );
 	then
 		OrderStatus status = new OrderStatus();
 		status.setStatus(false);
-		status.setMessageCode("1001");
+		status.setMessageCode("100");
 		barcodeDetail.setOrderStatus(status);
 	end
-	
-rule "If Barcode is not equal to '9999' and OrderInformation is null"
-	when 
-		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
-		barcodeValidator.getBarcode() != "9999" && 
-		orderInformation == null
-		)
-	then
-		OrderStatus status = new OrderStatus();
-		status.setStatus(false);
-		status.setMessageCode("1002");
-		barcodeDetail.setOrderStatus(status);
-	end	
-	
-rule "If Barcode is not equal to '9999' and OrderInformation is not null"
-	when 
-		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
-		barcodeValidator.getBarcode() != "9999" && 
-		orderInformation == null
-		)
-	then
-		OrderStatus status = new OrderStatus();
-		status.setStatus(true);
-		status.setMessageCode("1003");
-		barcodeDetail.setOrderStatus(status);
-	end	
