@@ -35,7 +35,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null"
 		)
 	then
 		OrderStatus status = new OrderStatus();
-		status.setStatus(false);
-		status.setMessageCode("1002");
+		status.setStatus(true);
+		status.setMessageCode("1003");
 		barcodeDetail.setOrderStatus(status);
 	end	
