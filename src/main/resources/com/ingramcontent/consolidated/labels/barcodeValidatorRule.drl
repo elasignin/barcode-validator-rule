@@ -71,7 +71,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Tot
 		orderInformation != null && 
 		orderInformation.getBarcodeRules() != null && 
 		orderInformation.getBarcodeRules().isUsesCustomerSuppliedBarcode() &&
-		barcodeValidator.getBarcode().length() == orderInformation.getBarcodeRules().getLength()
+		barcodeValidator.getBarcode().length() != orderInformation.getBarcodeRules().getLength()
 		)
 	then
 		OrderStatus status = new OrderStatus();
