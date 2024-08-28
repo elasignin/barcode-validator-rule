@@ -5,7 +5,8 @@ import com.ingramcontent.consolidated.labels.model.OrderStatus;
 
 rule "update BulkItemFeedRule"
 	when 
-		barcodeDetail: BarcodeDetail();
+		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
+		barcodeValidator.getBarcode == "9999")
 	then
 		OrderStatus status = new OrderStatus();
 		status.setStatus(false);
