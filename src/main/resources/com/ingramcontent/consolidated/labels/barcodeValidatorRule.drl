@@ -63,7 +63,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Tot
 		barcodeDetail.setOrderStatus(status);
 	end	
 	
-rule "If Barcode is not equal to '9999' and OrderInformation is not null and TotalCount is not equal to zero"
+rule "If Barcode is not equal to '9999' and OrderInformation is not null and Barcode's length is not equal to BarcodeRule's length"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() != null &&
