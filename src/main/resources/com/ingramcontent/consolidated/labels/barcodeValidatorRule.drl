@@ -51,6 +51,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Tot
 		barcodeValidator.getBarcode() != "9999" && 
 		orderInformation != null && 
 		orderInformation.getBarcodeRules() != null && 
+		barcodeValidator.getBarcode().length() == orderInformation.getBarcodeRules().getLength() &&
 		orderInformation.getBarcodeRules().isUsesCustomerSuppliedBarcode() &&
 		totalCount != 0
 		)
