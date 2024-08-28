@@ -30,6 +30,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is null"
 rule "If Barcode is not equal to '9999' and OrderInformation is not null and TotalCount is equal to zero"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
+		barcodeValidator.getBarcode() != null &&
 		barcodeValidator.getBarcode() != "9999" && 
 		orderInformation != null && 
 		orderInformation.getBarcodeRules() != null && 
@@ -46,6 +47,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Tot
 rule "If Barcode is not equal to '9999' and OrderInformation is not null and TotalCount is not equal to zero"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
+		barcodeValidator.getBarcode() != null &&
 		barcodeValidator.getBarcode() != "9999" && 
 		orderInformation != null && 
 		orderInformation.getBarcodeRules() != null && 
