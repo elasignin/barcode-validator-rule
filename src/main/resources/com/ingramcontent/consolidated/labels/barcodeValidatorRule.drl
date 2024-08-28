@@ -18,7 +18,7 @@ rule "If Barcode is not equal to '9999'"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() != "9999" && 
-		orderInformation != null
+		orderInformation == null
 		)
 	then
 		OrderStatus status = new OrderStatus();
