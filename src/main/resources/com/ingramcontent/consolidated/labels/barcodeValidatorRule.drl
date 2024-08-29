@@ -8,10 +8,10 @@ rule "If Barcode is equal to '9999'"
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() == "9999")
 	then
-		OrderStatus status = new OrderStatus();
+		ItemStatus status = new ItemStatus();
 		status.setSuccess(false);
 		status.setMessageCode("1001");
-		barcodeDetail.setOrderStatus(status);
+		barcodeDetail.setItemStatus(status);
 	end
 	
 rule "If Barcode is not equal to '9999' and OrderInformation is null"
@@ -21,10 +21,10 @@ rule "If Barcode is not equal to '9999' and OrderInformation is null"
 		barcodeValidator.getToteBarcode()
 		)
 	then
-		OrderStatus status = new OrderStatus();
+		ItemStatus status = new ItemStatus();
 		status.setSuccess(false);
 		status.setMessageCode("1001");
-		barcodeDetail.setOrderStatus(status);
+		barcodeDetail.setItemStatus(status);
 	end	com.ingramcontent.consolidated.labels.model.BarcodeDetail( )
 	
 rule "If Barcode is not equal to '9999' and OrderInformation is not null and Barcode's length is not equal to BarcodeRule's length"
@@ -38,8 +38,8 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Bar
 		barcodeValidator.getBarcode().length() != toteInformation.getBarcodeRules().getLength()
 		)
 	then
-		OrderStatus status = new OrderStatus();
+		ItemStatus status = new ItemStatus();
 		status.setSuccess(false);
 		status.setMessageCode("1005");
-		barcodeDetail.setOrderStatus(status);
+		barcodeDetail.setItemStatus(status);
 	end		
