@@ -14,7 +14,7 @@ rule "If Barcode is equal to '9999'"
 		barcodeDetail.setItemStatus(status);
 	end
 	
-rule "If Barcode is null and OrderInformation is null"
+rule "If Barcode is null and DoNotPrint is true"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() == null && 
@@ -27,7 +27,7 @@ rule "If Barcode is null and OrderInformation is null"
 		barcodeDetail.setItemStatus(status);
 	end	
 	
-rule "If Barcode is not equal to '9999' and OrderInformation is not null and Barcode's length is not equal to BarcodeRule's length"
+rule "If Barcode is not equal to '9999' and toteInformation is not null and Barcode's length is not equal to BarcodeRule's length"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() != null &&
@@ -40,6 +40,23 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Bar
 	then
 		ItemStatus status = new ItemStatus();
 		status.setSuccess(false);
-		status.setMessageCode("1005");
+		status.setMessageCode("1003");
+		barcodeDetail.setItemStatus(status);
+	end	
+	
+rule "If Barcode is not equal to '9999' and toteInformation is not null and Barcode's length is equal to BarcodeRule's length"
+	when 
+		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
+		barcodeValidator.getBarcode() != null &&
+		barcodeValidator.getBarcode() != "9999" && 
+		toteInformation != null && 
+		toteInformation.getBarcodeRules() != null && 
+		toteInformation.getBarcodeRules().isUsesCustomerSuppliedBarcode() &&
+		barcodeValidator.getBarcode().length() == toteInformation.getBarcodeRules().getLength()
+		)
+	then
+		ItemStatus status = new ItemStatus();
+		status.setSuccess(false);
+		status.setMessageCode("1004");
 		barcodeDetail.setItemStatus(status);
 	end		
