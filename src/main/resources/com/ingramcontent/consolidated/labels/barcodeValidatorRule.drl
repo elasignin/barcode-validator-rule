@@ -56,7 +56,7 @@ rule "If Barcode is not equal to '9999' and toteInformation is not null and Barc
 		)
 	then
 		ItemStatus status = new ItemStatus();
-		status.setSuccess(false);
+		status.setSuccess(true);
 		status.setMessageCode("1004");
 		barcodeDetail.setItemStatus(status);
 	end		
