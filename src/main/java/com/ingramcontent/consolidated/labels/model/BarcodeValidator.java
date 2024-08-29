@@ -12,6 +12,8 @@ public class BarcodeValidator implements java.io.Serializable {
 	private java.lang.String barcode;
 	private java.lang.String toteBarcode;
 
+	private boolean doNotPrint;
+
 	public BarcodeValidator() {
 	}
 
@@ -39,11 +41,21 @@ public class BarcodeValidator implements java.io.Serializable {
 		this.toteBarcode = toteBarcode;
 	}
 
+	public boolean isDoNotPrint() {
+		return this.doNotPrint;
+	}
+
+	public void setDoNotPrint(boolean doNotPrint) {
+		this.doNotPrint = doNotPrint;
+	}
+
 	public BarcodeValidator(java.lang.String barcodeShip,
-			java.lang.String barcode, java.lang.String toteBarcode) {
+			java.lang.String barcode, java.lang.String toteBarcode,
+			boolean doNotPrint) {
 		this.barcodeShip = barcodeShip;
 		this.barcode = barcode;
 		this.toteBarcode = toteBarcode;
+		this.doNotPrint = doNotPrint;
 	}
 
 }
