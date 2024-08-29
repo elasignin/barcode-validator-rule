@@ -25,7 +25,7 @@ rule "If Barcode is null and OrderInformation is null"
 		status.setSuccess(false);
 		status.setMessageCode("1001");
 		barcodeDetail.setItemStatus(status);
-	end	com.ingramcontent.consolidated.labels.model.BarcodeDetail( )
+	end	
 	
 rule "If Barcode is not equal to '9999' and OrderInformation is not null and Barcode's length is not equal to BarcodeRule's length"
 	when 
