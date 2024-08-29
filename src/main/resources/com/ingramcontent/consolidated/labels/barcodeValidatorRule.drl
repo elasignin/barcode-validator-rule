@@ -23,7 +23,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is null"
 	then
 		OrderStatus status = new OrderStatus();
 		status.setSuccess(false);
-		status.setMessageCode("1002");
+		status.setMessageCode("1001");
 		barcodeDetail.setOrderStatus(status);
 	end	com.ingramcontent.consolidated.labels.model.BarcodeDetail( )
 	
@@ -39,7 +39,7 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Bar
 		)
 	then
 		OrderStatus status = new OrderStatus();
-		status.setStatus(false);
+		status.setSuccess(false);
 		status.setMessageCode("1005");
 		barcodeDetail.setOrderStatus(status);
 	end		
