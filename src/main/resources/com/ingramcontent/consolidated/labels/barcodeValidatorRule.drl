@@ -14,11 +14,11 @@ rule "If Barcode is equal to '9999'"
 		barcodeDetail.setItemStatus(status);
 	end
 	
-rule "If Barcode is not equal to '9999' and OrderInformation is null"
+rule "If Barcode is null and OrderInformation is null"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() == null && 
-		barcodeValidator.getToteBarcode()
+		barcodeValidator.getDoNotPrint()
 		)
 	then
 		ItemStatus status = new ItemStatus();
