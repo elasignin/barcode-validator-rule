@@ -8,8 +8,9 @@ public class ItemStatus implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	private boolean status;
 	private java.lang.String messageCode;
+
+	private boolean success;
 
 	public ItemStatus() {
 	}
@@ -22,17 +23,17 @@ public class ItemStatus implements java.io.Serializable {
 		this.messageCode = messageCode;
 	}
 
-	public boolean isStatus() {
-		return this.status;
+	public boolean isSuccess() {
+		return this.success;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setSuccess(boolean success) {
+		this.success = success;
 	}
 
-	public ItemStatus(boolean status, java.lang.String messageCode) {
-		this.status = status;
+	public ItemStatus(java.lang.String messageCode, boolean success) {
 		this.messageCode = messageCode;
+		this.success = success;
 	}
 
 }
