@@ -17,7 +17,7 @@ rule "If Barcode is equal to '9999'"
 rule "If Barcode is not equal to '9999' and OrderInformation is null"
 	when 
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
-		barcodeValidator.getBarcode() != "9999" && 
+		barcodeValidator.getBarcode() == null && 
 		barcodeValidator.getToteBarcode()
 		)
 	then
@@ -32,10 +32,10 @@ rule "If Barcode is not equal to '9999' and OrderInformation is not null and Bar
 		barcodeDetail: BarcodeDetail(barcodeValidator != null &&
 		barcodeValidator.getBarcode() != null &&
 		barcodeValidator.getBarcode() != "9999" && 
-		orderInformation != null && 
-		orderInformation.getBarcodeRules() != null && 
-		orderInformation.getBarcodeRules().isUsesCustomerSuppliedBarcode() &&
-		barcodeValidator.getBarcode().length() != orderInformation.getBarcodeRules().getLength()
+		toteInformation != null && 
+		toteInformation.getBarcodeRules() != null && 
+		toteInformation.getBarcodeRules().isUsesCustomerSuppliedBarcode() &&
+		barcodeValidator.getBarcode().length() != toteInformation.getBarcodeRules().getLength()
 		)
 	then
 		OrderStatus status = new OrderStatus();
