@@ -11,6 +11,8 @@ public class BarcodeDetail implements java.io.Serializable {
 	private com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator;
 	private com.ingramcontent.consolidated.labels.model.ToteInformation toteInformation;
 
+	private com.ingramcontent.consolidated.labels.model.ItemStatus itemStatus;
+
 	public BarcodeDetail() {
 	}
 
@@ -32,11 +34,22 @@ public class BarcodeDetail implements java.io.Serializable {
 		this.toteInformation = toteInformation;
 	}
 
+	public com.ingramcontent.consolidated.labels.model.ItemStatus getItemStatus() {
+		return this.itemStatus;
+	}
+
+	public void setItemStatus(
+			com.ingramcontent.consolidated.labels.model.ItemStatus itemStatus) {
+		this.itemStatus = itemStatus;
+	}
+
 	public BarcodeDetail(
 			com.ingramcontent.consolidated.labels.model.BarcodeValidator barcodeValidator,
-			com.ingramcontent.consolidated.labels.model.ToteInformation toteInformation) {
+			com.ingramcontent.consolidated.labels.model.ToteInformation toteInformation,
+			com.ingramcontent.consolidated.labels.model.ItemStatus itemStatus) {
 		this.barcodeValidator = barcodeValidator;
 		this.toteInformation = toteInformation;
+		this.itemStatus = itemStatus;
 	}
 
 }
